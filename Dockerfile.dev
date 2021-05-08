@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+copy package.json .
+
+RUN npm install
+# COPY . .
+RUN chown -Rh 1005:1006 /app/node_modules
+
+CMD ["npm", "run", "start"]
