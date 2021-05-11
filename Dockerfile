@@ -1,10 +1,10 @@
 #BUILD PHASE
 FROM node:alpine
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./
 #install only required by npm run build
 RUN npm install
-COPY . .
+COPY ./ ./
 RUN npm run build
 #/app/build will have all the outputs of above phase
 
